@@ -3,7 +3,7 @@
 To use this as boilerplate, you'll need to take the following steps:
 
 * Update project name and description in `package.json` and
-  `.travis.yml` files
+  `.travis.yml` files and `client/components/navbar`
 * `npm install`
 * Create two postgres databases (`MY_APP_NAME` should match the `name`
   parameter in `package.json`):

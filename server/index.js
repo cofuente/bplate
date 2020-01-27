@@ -105,7 +105,17 @@ const startListening = () => {
   require('./socket')(io)
 }
 
-const syncDb = () => db.sync()
+// const syncDb = () => db.sync()
+
+async function syncDb() {
+  try {
+    await db.authenticate()
+    console.log('Connection to the database has been established successfully.')
+    db.sync()
+  } catch (error) {
+    console.error('Unable to connect to the database:', error)
+  }
+}
 
 async function bootApp() {
   await sessionStore.sync()
